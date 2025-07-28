@@ -1,0 +1,28 @@
+{
+	"layer": "top",
+	"position": "top",
+
+	"modules-left": [
+		"hyprland/workspaces",
+		"tray"
+	],
+	"modules-center": [
+		"hyprland/window"
+	],
+	"modules-right": [
+		"memory",
+		"network#wlp62s0",
+		"battery",
+		"clock"
+	],
+
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"format-icons": {
+			"default": "D",
+			"active": "A",
+			"urgent": "U"
+		}
+	}
+}
+
