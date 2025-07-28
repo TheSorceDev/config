@@ -4,18 +4,21 @@ echo "Removing old configs..."
 rm -rf ~/.config/hypr ~/.config/wofi ~/.config/waybar
 
 echo "Creating config directories..."
-mkdir -p ~/.config/hypr ~/.config/wofi ~/.config/waybar
+mkdir -p ~/.config
 
-echo "Downloading Hyprland config..."
-curl -Lo ~/.config/hypr/hyprland.conf https://raw.githubusercontent.com/TheSorceDev/config/main/hyprland.conf
+echo "Cloning full config repo temporarily..."
+git clone --depth 1 https://github.com/TheSorceDev/config.git /tmp/config-temp
 
-echo "Downloading wofi config files..."
-curl -Lo ~/.config/wofi/config https://raw.githubusercontent.com/TheSorceDev/config/main/wofi/config
-curl -Lo ~/.config/wofi/style.css https://raw.githubusercontent.com/TheSorceDev/config/main/wofi/style.css
+echo "Copying Hyprland config..."
+mkdir -p ~/.config/hypr
+cp /tmp/config-temp/hyprland.conf ~/.config/hypr/hyprland.conf
 
-echo "Downloading waybar config files..."
-curl -Lo ~/.config/waybar/config https://raw.githubusercontent.com/TheSorceDev/config/main/waybar/config
-curl -Lo ~/.config/waybar/style.css https://raw.githubusercontent.com/TheSorceDev/config/main/waybar/style.css
+echo "Copying full wofi and waybar folders..."
+cp -r /tmp/config-temp/wofi ~/.config/
+cp -r /tmp/config-temp/waybar ~/.config/
+
+echo "Cleaning up..."
+rm -rf /tmp/config-temp
 
 echo "All configs installed!"
 echo "Reload Hyprland or restart your session to apply changes."
