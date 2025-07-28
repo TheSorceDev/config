@@ -1,0 +1,39 @@
+* {
+    background: transparent;
+    font-size: 12px;
+}
+window {
+    margin: 20px;
+    padding: 15px;
+    background-color: rgba(22, 22, 26, 0.5);  /* instead of solid */
+    border-radius: 8px;
+    font-family: JetBrainsMono Nerd Font, sans-serif;
+    outline: none;
+}
+
+#input {
+    margin: 5px;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 4px;
+    color: #cdd6f4;
+    border: 1px solid #55555588;
+    transition: border-color 0.3s ease;
+}
+
+#entry {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #1a1a1ab8;
+    backdrop-filter: blur(5px);
+    border: 1px solid #55555588;
+    color: #cdd6f4;
+}
+
+#entry:selected {
+    background-color: transparent;
+    color: #f5c2e7;
+    outline: none;
+    border: 1px solid #6b2ac1;
+}
